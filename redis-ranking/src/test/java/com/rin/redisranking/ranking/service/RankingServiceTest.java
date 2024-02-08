@@ -23,6 +23,11 @@ public class RankingServiceTest {
         String sortType = "rating";
 
         List<Team> teamList = rankingService.viewRanking(sports, gameType, sortType);
+
+        for(Team team : teamList) {
+            System.out.println(team.getTeamId());
+        }
+
         Assertions.assertThat(teamList.size()).isEqualTo(3);
     }
 }

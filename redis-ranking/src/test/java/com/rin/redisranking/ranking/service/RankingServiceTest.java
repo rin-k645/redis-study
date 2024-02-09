@@ -28,6 +28,6 @@ public class RankingServiceTest {
             System.out.println(team.getTeamId());
         }
 
-        Assertions.assertThat(teamList.size()).isEqualTo(3);
+        Assertions.assertThat(teamList.size()).isEqualTo(10);
     }
 }

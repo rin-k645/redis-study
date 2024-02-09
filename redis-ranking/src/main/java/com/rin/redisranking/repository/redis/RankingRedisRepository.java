@@ -17,7 +17,7 @@ public class RankingRedisRepository {
     private ZSetOperations<String, String> zSetOperations ;
 
     private final int START = 0;
-    private final int END = 10;
+    private final int END = 9;
 
     @PostConstruct
     private void init() {

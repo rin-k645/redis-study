@@ -18,15 +18,15 @@ public class RankingServiceTest {
     @Test
     @DisplayName("viewRanking")
     void test1() {
-        String sports = "농구";
-        String gameType = "3vs3";
+        String sports = "축구";
+        String gameType = "5vs5";
         String sortType = "rating";
 
         List<Team> teamList = rankingService.viewRanking(sports, gameType, sortType);
 
-        for(Team team : teamList) {
-            System.out.println(team.getTeamId());
-        }
+//        for(Team team : teamList) {
+//            System.out.println(team.getTeamId());
+//        }
 
         Assertions.assertThat(teamList.size()).isEqualTo(10);
     }

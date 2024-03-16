@@ -26,6 +26,18 @@ public class RankingServiceImpl implements RankingService {
         return teamList;
     }
 
+    @Override
+    public List<Team> viewRanking2(String sports, String gameType, String sort) {
+        switch (sort) {
+            case "times" : return teamJPARepository.getTop10BySportsAndGameTypeOrderByMatchTimesDesc(sports, gameType);
+            case "win" : return teamJPARepository.getTop10BySportsAndGameTypeOrderByWinDesc(sports, gameType);
+            case "draw" : return teamJPARepository.getTop10BySportsAndGameTypeOrderByDrawDesc(sports, gameType);
+            case "lose" : return teamJPARepository.getTop10BySportsAndGameTypeOrderByLoseDesc(sports, gameType);
+            case "rating" : return teamJPARepository.getTop10BySportsAndGameTypeOrderByPointDesc(sports, gameType);
+        }
+        return null;
+    }
+
     private void sortBySortType(String sort, List<Team> teamList) {
         switch (sort) {
             case "times" : teamList.sort(Comparator.comparing(Team::getMatchTimes).reversed()); break;
